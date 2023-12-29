@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-09-05 10:23:51
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-20 11:24:48
+ * @LastEditTime: 2023-12-29 21:55:37
  * @FilePath: \Vue-wallpapers\src\main.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -19,7 +19,6 @@ import router from './router/index.ts'
 // 瀑布流
 import {VueMasonryPlugin} from 'vue-masonry';
 // 懒加载
-
 import lazyPlugins from 'vue3-lazy'
 // 动画
 import VWave from 'v-wave'

@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-12-05 15:31:33
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-20 11:27:23
+ * @LastEditTime: 2023-12-27 16:18:45
  * @FilePath: \Vue-wallpapers site\src\views\Dynamic\components\main\homePage.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -43,8 +43,8 @@
       <div class="boxList2" ref="boxList2">
           <div class="boxBackground" >
             <el-carousel height="3.6rem">
-            <el-carousel-item v-for="data in data" key="index">
-              <img :src="data.img_url[0]" style="width: 100%;height:100%;vertical-align: bottom;" alt="">
+            <el-carousel-item v-for="item in data" key="index">
+              <img :src="item.img_url[0]" style="width: 100%;height:100%;vertical-align: bottom;" alt="">
               <h5>No.001【动漫】优选壁纸荐</h5>
               <h6>us:千秋月</h6>
             </el-carousel-item>
@@ -96,11 +96,11 @@
 <script setup lang="ts">
 import {getRecommend} from '../../../../apis/getRecommend'
 import { onMounted,ref,reactive } from 'vue';
-const data=ref([
+const data:any=ref([
 ])
 const istrue=ref(false)
-const boxList2=ref(null)
-const boxInformation=ref(null)
+const boxList2:any=ref(null)
+const boxInformation:any=ref(null)
 const form = reactive({
   name: '',
   date1: '',
@@ -108,7 +108,9 @@ const form = reactive({
   desc: '',
 })
 onMounted(()=>{
-  getRecommend('/api/TopTen').then((result)=>{
+  getRecommend({
+    url:'/api/TopTen'
+  }).then((result)=>{
     data.value = result.data
   })
 })
@@ -122,6 +124,9 @@ const reviseBtn=()=>{
     boxInformation.value.style.flex=1
     boxList2.value.style.height=10.5+'rem'
   }
+}
+const onSubmit=()=>{
+  
 }
 </script>
 

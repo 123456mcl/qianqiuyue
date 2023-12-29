@@ -1,0 +1,57 @@
+
+@mixin wh($w,$h){
+    width: $w;
+    height: $h;
+}
+@mixin flex1(){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@mixin flex2(){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@mixin flex4(){
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex3(){
+    display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
+@mixin flex5(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex6(){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin fontsize($f,$c){
+    font-size: $f ;
+    color: $c;
+}
+$Oversized:.3125rem;
+$middleSize:.25rem;
+$smallSize:.2rem;
+
+
+
+
+$textColor:rgb(180,180,180); //深灰
+$white:rgb(255,255,255);  //白色
+$Orange1:rgb(248,207,57); //深黄
+$hoverOrange1:rgb(249,217,97); //浅黄
+$grayColor:rgb(247,247,247); //浅灰
+$graysColor:rgb(230,234,238); //深灰2
+$graysColor3:rgb(153,153,166); //深灰3
+$black:rgb(102,102,102); //浅黑
+$black1:rgb(45,45,45); //一般黑
+$black2:rgb(40,40,40); //一般黑2
+$blacks:rgb(0,0,0); //深黑
+$blue:rgb(0,161,214); //浅蓝

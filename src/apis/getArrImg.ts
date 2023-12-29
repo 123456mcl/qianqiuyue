@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-09-07 09:30:56
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-09-28 20:43:35
+ * @LastEditTime: 2023-12-27 11:58:43
  * @FilePath: \Vue-wallpapers\src\apis\getImgAPI.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -43,6 +43,7 @@ export async function getArrImg():Promise<any>{
             httpInstance({
                 url:`api/?c=WallPaper&a=getAppsByCategory&cid=${a}&start=${i}&count=99&from=360chrome`
             }).then((v)=>{
+                console.log(v,'--------------------------------');
                 const t=arrs.find((e:any)=>{
                  return  e.id==a
                 }) 
