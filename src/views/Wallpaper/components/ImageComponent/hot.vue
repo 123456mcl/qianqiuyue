@@ -1,25 +1,25 @@
 <!--
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @Date: 2023-09-05 10:59:13
+ * @Date: 2023-12-19 23:13:15
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-01 17:16:05
- * @FilePath: \Vue-wallpapers\src\views\layout\index.vue
+ * @LastEditTime: 2024-01-05 12:28:51
+ * @FilePath: \Vue-wallpapers site\src\views\Wallpaper\components\ImageComponent\latest.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
-<script setup lang="ts">
-import  layoutHeader from './components/layoutHeader.vue'
-import  layoutHome from './components/layoutHome.vue'
-import  layoutFooter from './components/layoutFooter.vue'
-import  layoutNode from './components/layoutNode.vue'
-</script>
 
 <template>
-    <layoutHeader/>
-    <layoutHome/>
-    <layoutFooter/>
-    <layoutNode/>
+    <div class="hot">2</div>
 </template>
+
+<script setup lang="ts">
+
+</script>
   
 <style lang="scss">
-  
+    .hot{
+        width: 95%;
+        min-height: 10rem;
+        margin-top: .5rem;
+        border-radius: .1rem;
+    }
 </style>

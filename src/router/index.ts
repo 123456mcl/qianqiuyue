@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-09-05 10:38:48
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-21 20:36:36
+ * @LastEditTime: 2024-01-05 12:25:18
  * @FilePath: \Vue-wallpapers\src\router\index.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -10,8 +10,17 @@
 import { createRouter, createWebHistory,RouteRecordRaw } from 'vue-router'  //将createRouter、createWebHistory引入vue
 const routes:Array<RouteRecordRaw> = [
   {
-    path:'',
+    path:'/',
     name:'',
+    component: () => import("../views/Load/index.vue"),
+    meta:{ keepAlive: true},
+    children:[
+     
+    ],
+  },
+  {
+    path:'/HelloWorld',
+    name:'HelloWorld',
     component: () => import("../components/HelloWorld.vue"),
     meta:{ keepAlive: true},
     children:[
@@ -19,15 +28,23 @@ const routes:Array<RouteRecordRaw> = [
     ],
   },
   {
-    path:'/HomeImg',
-    name:'HomeImg',
+    path:'/Homeimg',
+    name:'Homeimg',
     meta:{ keepAlive: true},
     component: () => import("../views/Home/index.vue"),
     children:[
       {
-        path:'',
-        component: () => import("../views/Home/components/HomeImage.vue"),
-      }
+        path:':id',
+        name:'imgClassify',
+        meta:{ keepAlive: true},
+        component: () => import("../views/Home/components/imgClassify.vue"),
+      },
+      {
+        path:'imgSearch',
+        name:'imgSearch',
+        meta:{ keepAlive: true},
+        component: () => import("../views/Home/components/imgSearch.vue"),
+      },
     ],
   },
   {
@@ -63,7 +80,7 @@ const routes:Array<RouteRecordRaw> = [
     meta:{ keepAlive: true},
     children:[
       {
-        path:'',
+        path:'hottest',
         name:'hottest',
         component: () => import("../views/Wallpaper/components/ImageComponent/hottest.vue"),
         meta:{ keepAlive: true},
@@ -76,11 +93,13 @@ const routes:Array<RouteRecordRaw> = [
           }
         ]
       },
-      // {
-      //   path:'latest',
-      //   name:'latest',
-      //   component: () => import("../views/Wallpaper/components/ImageComponent/latest.vue"),
-      // },
+      {
+        path:'hot',
+        name:'hot',
+        component: () => import("../views/Wallpaper/components/ImageComponent/hot.vue"),
+        meta:{ keepAlive: true},
+        children:[]
+      }
     ],
   },
   {
@@ -110,16 +129,15 @@ const router = createRouter({
 })
 router.beforeEach((to,from,next)=>{
   const a=document.querySelector('canvas')
-    if(to.fullPath=='/Dynamic' || to.fullPath=='/Wallpaper'){
+    if(to.fullPath=='/Dynamic' || to.fullPath=='/Wallpaper' || to.path=='/Homeimg/6' || from.fullPath=='/HelloWorld'){
       if(a){
         a.style.display="none"
       }
     }
-    if(to.fullPath=='/'){
+    if(to.fullPath=='/HelloWorld'){
       if(a){
         a.style.display="block"
       }
-      
     }
 	next()
 })

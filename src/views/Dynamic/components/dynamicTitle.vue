@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-11-27 13:13:01
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-19 15:00:08
+ * @LastEditTime: 2024-01-03 14:08:24
  * @FilePath: \Vue-wallpapers site\src\views\Dynamic\components\dynamicBody.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -85,16 +85,8 @@ onMounted(() =>{
         })
         v.addEventListener('mousemove',function(e) {
             divs.forEach((div)=>div.classList.remove('active'))
-            // v.classList.add('active')
         })
     })
-    // const arr=document.querySelectorAll('a')
-    // arr.forEach((v,i)=>{
-    //     v.addEventListener('click',function(e) {
-    //         v.style.classList.add('active')
-        
-    //     })
-    // })
 })
 
 </script>

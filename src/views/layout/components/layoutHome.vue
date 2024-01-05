@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-09-27 15:42:51
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-06 19:59:10
+ * @LastEditTime: 2024-01-02 21:30:33
  * @FilePath: \Vue-wallpapers site\src\views\layout\components\layoutHome.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -93,12 +93,7 @@
             </div>
         <div class="imgList" v-for="item in arr" :key="item.id" :style="{
             width:'100%',height:'1000px',backgroundImage:'url('+ item.url +')',backgroundSize:'100% 100%'}">
-            <router-link class="hvr-buzz-out" :to="{
-                path:'/HomeImg',
-                query:{
-                    id:item.id
-                }
-            }">{{item.name}}</router-link>
+            <router-link class="hvr-buzz-out" :to="`/Homeimg/${item.id}`">{{item.name}}</router-link>
         </div>
     </div>
     <el-backtop :right="40" :bottom="40" visibility-height="900"/>

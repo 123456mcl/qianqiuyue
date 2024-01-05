@@ -6,11 +6,11 @@
     <header>
         <div class="Carousel">
             <el-carousel >
-            <el-carousel-item v-for="item in 4" :key="item">
-                <div>
-                    <img src="/src/assets/imgs/4k专区.png" alt="" style="width: 100%;height:100%;">
-                </div>
-            </el-carousel-item>
+                <el-carousel-item v-for="item in 4" :key="item">
+                    <div>
+                        <img src="/src/assets/imgs/4k专区.png" alt="" style="width: 100%;height:100%;">
+                    </div>
+                </el-carousel-item>
             </el-carousel>
         </div>
         <div class="Section" >
@@ -32,39 +32,43 @@
         </div>
         <div class="Classify" style="z-index:2;">
             <div class="Classifybtn">
-              
+                <ul>
+                    <li>
+                        <router-link active-class="active" to="/Wallpaper/hottest">最新作品</router-link>
+                    </li>
+                    <li>
+                        <router-link active-class="active" to="/Wallpaper/hot">热门作品</router-link>
+                    </li>
+                </ul>
             </div>
             <div class="Classifyavatar">
 
             </div>
         </div>
-         <router-view/>
+         <keep-alive>
+            <router-view/>
+         </keep-alive>
     </header>
    
 </template>
   
-<style lang="scss">
-@mixin wh($w,$h){
-    min-width: $w;
-        min-height: $h;
-    }
-    .active{
-        background-color: rgba(255,216,0);
-    }
+<style lang="scss" scope>
+@import '/src/styles/color.scss';
+    
     header{
-        @include wh(100%,10rem);
+        @include wh2(100%,10rem);
         display: flex;
         flex-direction: column;
         align-items: center;
         .Carousel{
             position: relative;
             margin-top: .25rem;
-            @include wh(95%,4rem);
+            @include wh2(95%,4rem);
             border-radius: .125rem;
             overflow: hidden;
             div{
                 position: absolute;
-                @include wh(100%,4rem);
+                @include wh2(100%,4rem);
             }
             .el-carousel {
                 --el-carousel-indicator-width: .375rem;
@@ -73,23 +77,23 @@
         }
 
         .Carousel,.Classify{
-            box-shadow: 0 2px 3px rgba(0, 0, 0,.1);
+            box-shadow: 0 .025rem .0375rem $graysColor4;
         }
         .Section{
-            @include wh(95%,2.4rem);
+            @include wh2(95%,2.4rem);
             margin-top: .4rem;
             display: flex;
             justify-content: space-between;
             div{
-                @include wh(4.35rem,100%);
+                @include wh2(4.35rem,100%);
                 border-radius: .1rem;
-                box-shadow: 0 2px 3px rgba(0, 0, 0,.2);
+                box-shadow: 0 .025rem .0375rem $graysColor3;
                 h1{
                     font-size: .35rem;
                     color: white;
                     text-align: center;
                     line-height: 2rem;
-                    text-shadow: 1px 1px white, 1px 1px rgb(86, 84, 84), -2px 2px 3px rgb(103, 103, 103);  
+                    text-shadow: .0125rem .0125rem $white, 1px 1px rgb(86, 84, 84), -2px 2px 3px rgb(103, 103, 103);  
                  }
             }
             div:nth-child(1){
@@ -116,30 +120,53 @@
             position: sticky;
             margin-top: .4rem;
             display: flex;
-            @include wh(95%,1rem);
+            @include wh(95%,1.2rem);
             top: 0rem;
-            background-color: white;
-            border-radius: .1rem;
+            background-color: $white;
+            border-radius: .05rem;
             .Classifybtn{
                 flex: 1;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
+                ul{
+                    width: 100%;
+                    @include flex9();
+                }
+                li{
+                    list-style: none;
+                    line-height: .5rem;
+                    a{
+                        display: block;
+                       @include wh(1.5rem,.6rem);
+                       text-align: center;
+                       line-height: .6rem;
+                       border-radius: .0625rem;
+                        text-decoration: none;
+                        background-color: $grayColor2;
+                      @include fontsize($middleSize,$black1);
+                      font-family: '方正幼圆';
+                    }
+                }
+                li:nth-child(1){
+                    margin-left: .8rem;
+                }
+                .active{
+                    background-color: $hoverOrange1;
+                    font-weight: 600;
+                }
             }
             .Classifyavatar{
-                flex: 3;
+                flex: 4;
             }
             button{
-                background-color: rgba(244,244,244);
+                background-color: $grayColor2;
                 border: none;
                 @include wh(1.4rem,.6rem);
                 border-radius: .1rem;
-                color: black;
-            }
-            div{
-
+                color: $black1;
             }
         }
     }
-  
+    
 </style>

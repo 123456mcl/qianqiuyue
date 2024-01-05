@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-09-26 08:24:25
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-10 10:11:51
+ * @LastEditTime: 2024-01-01 17:01:24
  * @FilePath: \Vue-wallpapers site\src\components\HelloWorld.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -85,7 +85,7 @@ window.addEventListener("mousemove",(e)=>{
 window.addEventListener("resize",(e)=>{
     let x=window.innerWidth
     let y=window.innerHeight
-    const canvas=document.querySelector('canvas')
+    const canvas:any=document.querySelector('canvas')
     canvas.style.width = x+'px'
     canvas.style.height = y+'px'
 })

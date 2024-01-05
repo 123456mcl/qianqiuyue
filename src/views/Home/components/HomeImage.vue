@@ -2,14 +2,14 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-10-12 10:20:35
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-26 10:27:35
+ * @LastEditTime: 2024-01-02 18:37:48
  * @FilePath: \Vue-wallpapers site\src\views\Home\components\Homeimage.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
   <div class="images" v-if="isbox">
     <div v-for="item in newdata" :key="item.id" v-wave>
-        <img v-lazy="item.url" alt="" @click="preview(item.url)">
+        <img v-lazy="item.url" alt="item.utag" @click="preview(item.url)">
     </div>
   </div>
   <section class="boximgs">
@@ -41,6 +41,8 @@
     const newdata=ref()
     const isrouterAlive=inject('isrouterAlive',Function,true)
     onMounted(()=>{
+      console.log(query.id);
+      
       data.value=useStore().$state.data.filter((item:any)=>{
         return item.id==query.id
       })
@@ -55,10 +57,7 @@
 </script>
 
 <style lang="scss" scope>
- @mixin wh($w,$h){
-        width: $w;
-        min-height: $h;
-    }
+ @import '/src/styles/color.scss';
     .images{
         flex-wrap: wrap;
         position: relative;

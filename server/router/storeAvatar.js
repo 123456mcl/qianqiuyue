@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-12-13 16:29:44
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-28 18:58:12
+ * @LastEditTime: 2024-01-05 18:42:41
  * @FilePath: \Vue-wallpapers site\server\router\storeAvatar.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -39,5 +39,6 @@ router.post('/api/LatestImages',urlencodedParser, storeAvatar.latestImages);
 router.post('/api/getImages',urlencodedParser, storeAvatar.getImages);
 //获取壁纸评论
 router.post('/api/Comments',urlencodedParser, storeAvatar.comments);
-
+//获取动态热门页面信息
+router.post('/api/Hot',urlencodedParser, storeAvatar.hot);
 module.exports = router

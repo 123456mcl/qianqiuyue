@@ -2,21 +2,21 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-09-05 10:23:51
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-26 10:39:41
+ * @LastEditTime: 2024-01-02 12:10:05
  * @FilePath: \Vue-wallpapers\src\App.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <script setup lang="ts">
-import  layoutNav from './views/layout/components/layoutNav.vue'
-import { setRem } from './utils/rem'
+import layoutNav from './views/layout/components/layoutNav.vue'
+import {setRem } from './utils/rem'
 import {useStore} from './stores/counter'
 import {getArrImg} from './apis/getArrImg'
 import {getToken} from './apis/getToken'
-getArrImg().then((res:any)=>{
-   useStore().$patch((state) => {
-       state.data=res
-   })
-})
+import { useRouter } from 'vue-router'
+import {onMounted} from 'vue'
+import { log } from 'util'
+const router = useRouter()
+onMounted(async()=>{
 getToken().then((res:any)=>{
    if(res){
       if(res.status==200){
@@ -26,11 +26,13 @@ getToken().then((res:any)=>{
    }
    }
 })
-try{
+getArrImg().then((res:any)=>{
+   useStore().$patch((state) => {
+       state.data=res
+        })
+    })
+})
 
-}catch{
-   
-}
 </script>
 
 <template>

@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-10-12 20:37:28
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-10 09:46:40
+ * @LastEditTime: 2024-01-01 17:16:40
  * @FilePath: \Vue-wallpapers site\src\views\layout\components\layoutNode.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -21,8 +21,6 @@
 
 <script setup lang="ts">
 import { onMounted,ref } from 'vue'
-import { useStore } from '../../../stores/counter'
-import { storeToRefs } from 'pinia'
 const number = ref(false)
 function fn(e:any){
   const liall=document.querySelectorAll('li')
