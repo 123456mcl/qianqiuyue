@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-12-29 18:44:24
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-06 20:00:51
+ * @LastEditTime: 2024-01-07 16:26:46
  * @FilePath: \Vue-wallpapers site\src\views\Wallpaper\components\ImageComponent\wallpaperFooter.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -58,9 +58,9 @@
 <style lang="scss" scoped>
  @import '/src/styles/color.scss';
  footer{
-    @include wh(115%,6rem);
-    margin-left: -1.875rem;  
-    margin-top: .5rem;
+    @include wh(100,6rem);
+    margin-top: 1.25rem;
+    bottom: 0;
     .footerTit,.footerMai,.footerFoo{
         background-color: $black2;
     }
@@ -71,8 +71,8 @@
         position: absolute;
         content: '';
         bottom: 0;
-        left: 16%;
-        width: 70%;
+        left: 10%;
+        width: 80%;
         height: .0125rem;
         background-color: $graysColor4;
     }
@@ -82,7 +82,7 @@
     @include wh(100%,1.5rem);
         svg{
             @include wh(.7rem,.7rem);
-            margin-left: 4.5rem;
+            margin-left: 2.5rem;
         }
         span{
            @include fontsize($smallSize,$font1);
@@ -96,7 +96,7 @@
     padding-top: .3rem;
     .footerMaibox1{
         flex: 2;
-        padding-left: 4.5rem;
+        padding-left: 2.5rem;
         padding-top: .2rem;
         @include fontsize($smallSize,$font1);
         font-family: '方正幼圆';

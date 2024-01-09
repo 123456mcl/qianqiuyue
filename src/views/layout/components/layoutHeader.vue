@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-09-26 08:24:25
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-03 18:02:39
+ * @LastEditTime: 2024-01-07 14:59:19
  * @FilePath: \Vue-wallpapers site\src\views\layout\components\layoutHeader.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -30,29 +30,20 @@ import 'animate.css'
 import {ref} from 'vue'
 const istrue=ref(true)
 const btn=()=>{
-   document.documentElement.scrollTop=2000
+   document.documentElement.scrollTop  = document.querySelector('.homeContext')?.getBoundingClientRect().top
 }
 </script>
 
 <style scope lang="scss">
-@media (min-width: 767px) {
-  @mixin wh($w,$h){
-        width: $w;
-        height: $h;
-    }
-    @mixin tl($w,$h,$v,$n){
-      top: $w;
-      left: $h;
-      transform: translate($v, $n);
-    }
+@import '/src/styles/color.scss';
     #logo{
-    @include wh(100px,100px);
+    @include wh(1.5rem,1.5rem);
     position: absolute;
     z-index: 2;
     top: 27%;
     left: 46%;
       svg{
-          @include wh(100px,100px);
+          @include wh(1.5rem,1.5rem);
         filter: drop-shadow(2px 2px 3px #4e4e4e);
       }
     }
@@ -63,90 +54,32 @@ const btn=()=>{
       display: flex;
       flex-direction: column;
       align-items: center;
-      line-height: 46px;
+      line-height: .575rem;
       
       a,text{
-          color: white;
+          color: $white;
           text-decoration: none;
           font-weight: 600;
       }
       a{
-          font-size: 44px;
-           letter-spacing: 5px;
+          font-size: .7rem;
+           letter-spacing: .0625rem;
       }
       #text{
-          font-size: 18px;
+          font-size: .225rem;
       }
     }
     #a{
        position: absolute;
         z-index: 2;
-        font-size: 25px;
+        font-size: .3125rem;
        @include tl(62%,47%,-50%,-50%);
-        letter-spacing: 4px;
+        letter-spacing: .05rem;
         font-weight: 800;
-        filter: drop-shadow(2px 2px 3px #4e4e4e);
+        filter: drop-shadow(.025rem .025rem .0375rem #4e4e4e);
         text-decoration: none;
-        border-radius: 18px;
-        padding: 18px;
+        border-radius: .225rem;
+        padding: .225rem;
     }
-}
-@media (max-width: 767px) {
-  @mixin wh($w,$h){
-        width: $w;
-        height: $h;
-    }
-    @mixin tl($w,$h,$v,$n){
-      top: $w;
-      left: $h;
-      transform: translate($v, $n);
-    }
-    #logo{
-    @include wh(100px,100px);
-    position: absolute;
-    z-index: 2;
-    top: 27%;
-    left: 41%;
-      svg{
-          @include wh(100px,100px);
-        filter: drop-shadow(2px 2px 3px #4e4e4e);
-      }
-    }
-    #title{
-      z-index: 2;
-      position: absolute;
-      @include tl(50%,50%,-50%,-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 46px;
-      a:nth-child(1){
-        font-size: 35px;
-      }
-      a,text{
-          color: white;
-          text-decoration: none;
-          font-weight: 600;
-      }
-      a{
-          font-size: 44px;
-           letter-spacing: 5px;
-      }
-      #text{
-          font-size: 18px;
-      }
-    }
-    #a{
-       position: absolute;
-        z-index: 2;
-        font-size: 25px;
-       @include tl(62%,42%,-50%,-50%);
-        letter-spacing: 4px;
-        font-weight: 800;
-        filter: drop-shadow(2px 2px 3px #4e4e4e);
-        text-decoration: none;
-        border-radius: 18px;
-        padding: 18px;
-    }
-}
+
 </style>

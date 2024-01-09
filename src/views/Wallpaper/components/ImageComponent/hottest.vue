@@ -2,13 +2,19 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-12-19 23:13:45
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-05 18:44:55
+ * @LastEditTime: 2024-01-07 17:05:49
  * @FilePath: \Vue-wallpapers site\src\views\Wallpaper\components\ImageComponent\hottest.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-    <div v-masonry class="imgbox" style="min-height: 6rem;">
-            <div v-if="istrue" class="imgboxImg" v-masonry-tile v-for="item in data" :fit-width="false" :key="item.img_id" style="margin-left: .14rem;margin-top: .3rem;">
+    <div class="animate__animated animate__fadeIn" style="position: relative;
+        width: 100%;
+        hmin-height: 10rem;
+        margin-top: .5rem;
+        padding-left: .6rem;
+        border-radius: .1rem;">
+        <div v-masonry v-if="istrue" class="animate__animated animate__fadeIn"  id="imgbox" style="min-height: 6rem;">
+            <div id="imgboxImg" class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".5s" v-masonry-tile v-for="item in data.slice(num.num1,num.num2)" :fit-width="false" style="margin-left: .14rem;margin-top: .3rem;">
                 <img :src="item.img_url[0]" alt="" @click="btn([item.img_id,item.name])">
                 <div class="information">
                     <div class="information1">
@@ -24,29 +30,28 @@
                     </div>
                 </div>
             </div>
-            <transition enter-active-class="animate__fadeInDown" leave-active-class="animate__fadeOutUp">
-                <div class="boxLoad" v-if="isLoad">
-                    <img src="/src/assets/imgs/liumangxing.png" alt="">
-                </div>
-            </transition>
-        <wallpaperFooter/>
+            <div ref="boxLoads" class="boxLoad">
+                <img v-if="isLoad" src="/src/assets/imgs/liumangxing.png" alt="">
+            </div>
+        </div>
     </div>
-    <router-view/> 
-  
+        <router-view/> 
 </template>
 
 <script setup lang="ts">
-import { onActivated,ref,reactive } from 'vue';
+import { onMounted,ref,reactive,onUnmounted } from 'vue';
 import {getRecommend} from '../../../../apis/getRecommend'
-import wallpaperFooter from '../../../../views/Wallpaper/components/ImageComponent/wallpaperFooter.vue'
-import { ElNotification } from 'element-plus';
+import { warning } from '../../../../apis/messagePrompt'
 import { useRouter } from 'vue-router'
-import { tr } from 'element-plus/es/locale/index.mjs';
 const istrue=ref(false)
 const isLoad=ref(false)
 const router = useRouter()
+const num=reactive({
+    num1:0,
+    num2:8,
+})
 const data=ref<any>({})
-onActivated(()=>{
+onMounted(()=>{
   getRecommend({
     url:'/api/latestImages'
   }).then((result)=>{
@@ -55,14 +60,30 @@ onActivated(()=>{
         istrue.value = true
     }
     else{
-        ElNotification({
-        title: '提示',
-        message: '获取壁纸信息失败',
-        type: 'warning',
-    })
+        warning('获取壁纸信息失败')
     }
   })
 })
+setTimeout(()=>{
+    const ob = new IntersectionObserver(
+    (entries:any)=>{
+      if(entries[0].isIntersecting){
+        isLoad.value = true
+        setTimeout(()=>{
+            num.num2=num.num2*2
+            isLoad.value = false
+            if(data.value.length <= data.value.slice(num.num1,num.num2).length){
+            warning('已经是极限啦')
+        }
+        },500)
+      }
+    },{
+        threshold:0,
+    }
+);
+const load:any = document.querySelector('.boxLoad')
+ob.observe(load)
+},1000)
 const btn=(e:any)=>{
     const datas = JSON.stringify(data.value)
     router.push({
@@ -81,19 +102,18 @@ const btn=(e:any)=>{
 <style lang="scss" scope>
     $size:.3125rem;
     @import '/src/styles/color.scss';
-    .imgbox{
-        position: relative;
-        width: 95%;
-        margin-top: .5rem;
-        border-radius: .1rem;
-      .imgboxImg{
+    #imgbox{
+      #imgboxImg{
         width: 5.5rem;
         background-color: $white;
-        overflow: hidden;
         border-radius: .1rem;
         img{
             width: 100%;
             vertical-align: bottom;
+            transition: .4s;
+        }
+        img:hover{
+            transform: scale(1.05);
         }
         .information{
             margin-top: .05rem;
@@ -139,11 +159,11 @@ const btn=(e:any)=>{
     .boxLoad{
     position: absolute;
     bottom: 0;
-        width: 100%;
-        height: 1rem;
-        display: flex;
-        justify-content: center;
-        margin-top: .5rem;
+    width: 100%;
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-top: .5rem;
     }
     .boxLoad img {
        @include wh(1.25rem,1.25rem);

@@ -2,22 +2,22 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2024-01-01 20:26:45
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-05 11:06:43
+ * @LastEditTime: 2024-01-07 16:48:12
  * @FilePath: \Vue-wallpapers site\src\views\Home\components\imgContent.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-    <transition v-if="isboxs" enter-active-class="animate__fadeInDown" leave-active-class="animate__fadeOutUp">
-        <div class="boxLoad" >
-            <img src="/src/assets/imgs/liumangxing.png" alt="">
+    <div  style="width: 100%;min-height: 10rem;" >
+        <div id="boxLoad" class="wow animate__bounce" data-wow-duration="1s" data-wow-delay=".5s" v-if="isboxs">
+            <img  src="/src/assets/imgs/liumangxing.png" alt="">
         </div>
-    </transition>
-        <div class="contents" v-masonry v-if="isbox" style="width: 100%;min-height: 10rem;">
-        <div v-masonry-tile class="images" v-for="items in newimg"> 
-            <img :style="{height:225 + Object.keys(items).map(item=>items[item])[2].split('x')[1]/27 + 'px'}"  v-lazy="Object.keys(items).map(item=>items[item])[Math.floor(Math.random() * 6) + 15]" alt="" @click="preview(items.url)">
+        <div id="contents" v-masonry v-if="isbox" style="width: 100%;min-height: 10rem;">
+        <div v-masonry-tile class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".5s" id="images" v-for="items in newimg"> 
+            <img  :style="{height:(225 + Object.keys(items).map(item=>items[item])[2].split('x')[1]/27)/80 + 'rem'}"  v-lazy="Object.keys(items).map(item=>items[item])[Math.floor(Math.random() * 6) + 15]" alt="" @click="preview(items.url)">
         </div>
     </div>
-    <div id="boximgs" style="margin-top: 1rem;">
+</div>
+    <div id="boximgs" style="margin-top: 1rem;margin-left:40%">
         <el-pagination
             small
             background
@@ -29,10 +29,11 @@
 </template>
 
 <script setup lang="ts">
-import {onMounted,ref,reactive,onDeactivated} from 'vue'
+import {onMounted,ref,reactive,watch} from 'vue'
 import { useRoute } from 'vue-router';
 import {useStore} from '../../../stores/counter'
 import { preview } from 'v-preview-image'
+import WOW from 'wow.js'
 const img=ref()
 const newimg=ref()
 const router= useRoute()
@@ -43,38 +44,45 @@ const num=reactive({
       num2:30,
       num3:0
     })
+    watch(
+      () => router.params,
+      () => {
+        window.location.reload();
+      }
+    );
 onMounted(()=>{
+    new WOW().init();
     const data:any = useStore().$state.data.filter((item:any)=>item.id==Number(router.fullPath.substring(9)))[0]
     data.arrdata.then((result: any) => {
         img.value=result
         num.num3=img.value.length
         newimg.value=img.value.slice(num.num1,num.num2)
-        isbox.value=true
+        setTimeout(()=>{
+            isboxs.value=false
+            isbox.value=true
+    },200)
     })
-    setTimeout(()=>{
-        isboxs.value=false
-    },500)
 })
 let time:any=null
 const handelCurrentChange=(value:any)=>{
     isbox.value=false
+    isboxs.value=true
      num.num1=30*value-30
      num.num2=30*value
      newimg.value=img.value.slice(num.num1,num.num2)
      time = setTimeout(()=>{
         isbox.value=true
+        isboxs.value=false
     },200)
     }
-  
 </script>
 
 <style lang="scss" scoped>
 @import '/src/styles/color.scss';
-    .contents{
+    #contents{
         position: relative;
         padding-left: .4rem;
-        background-color: $white;
-    .images{
+    #images{
         margin-left: .05rem;
         margin-top:.05rem ;
         width: 5.7rem;
@@ -86,15 +94,14 @@ const handelCurrentChange=(value:any)=>{
         }
     }
 }
-.boxLoad{
-    background-color: $white;
+#boxLoad{
         width: 100%;
         height: 1rem;
         display: flex;
         justify-content: center;
-        margin: .125rem 0rem .2rem;
+        top: 0;
     }
-    .boxLoad img {
+    #boxLoad img {
        @include wh(1.25rem,1.25rem);
         border-radius: 50%;
         animation: spin 3s linear infinite;

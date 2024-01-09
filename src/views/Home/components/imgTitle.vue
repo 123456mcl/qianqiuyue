@@ -2,12 +2,12 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-12-31 20:07:46
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-04 17:45:03
+ * @LastEditTime: 2024-01-07 15:47:21
  * @FilePath: \Vue-wallpapers site\src\views\Home\components\imgTitle.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-   <div class="header">
+   <div id="header">
         <ul class="nav">
             <li v-for="item in data" :key="data.id">
                 <router-link active-class="active" :to="`/Homeimg/${item.id}`"
@@ -36,12 +36,13 @@ onMounted(() => {
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '/src/styles/color.scss';
-.header{
+#header{
     @include wh(100%,1rem);
     background-color: $white;
     box-shadow: $boxShadow;
+    z-index: 1;
     display: flex;
     .nav{
         @include flex9();

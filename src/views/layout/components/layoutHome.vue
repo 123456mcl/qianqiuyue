@@ -2,98 +2,104 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-09-27 15:42:51
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-02 21:30:33
+ * @LastEditTime: 2024-01-09 22:51:52
  * @FilePath: \Vue-wallpapers site\src\views\layout\components\layoutHome.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
     <div class="homeContext">
         <div class="recommendbox">
-            <transition enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="animate__animated animate__fadeOutLeft">
-                <h1 v-show="isTl1" id="text1">欢迎来到图琳壁纸网站</h1>
-            </transition>
-            <transition enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="animate__animated animate__fadeOutLeft">
-                <h1 v-show="isTl2" id="text2">这是一个简单优美的</h1>
-            </transition>
-            <transition enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="animate__animated animate__fadeOutLeft">
-                <h1 v-show="isTl3" id="text3">极具个性化的壁纸网站</h1>
-            </transition>
-            <transition enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="animate__animated animate__fadeOutLeft">
-                <h1 v-show="isTl4" id="text4">在这里你可以做什么？</h1>
-            </transition>
-            <transition enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="animate__animated animate__fadeOutLeft">
-                <h1 v-show="isTl5" id="text5">下载你想要的壁纸</h1>
-            </transition>
-            <transition enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="animate__animated animate__fadeOutLeft">
-                <h1 v-show="isTl6" id="text6">展示你自己的作品</h1>
-            </transition>
-            <transition enter-active-class="animate__animated animate__fadeInDown" leave-active-class="animate__animated animate__fadeOutDown">
-                <div id="text7" v-show="isTl7">
-                    <h1>如果你已经对图琳有大致的了解</h1>
-                    <h1>那就来看看下面的吧</h1>
-                    <h3>在壁纸分类里搜寻你想要的壁纸</h3>
+          <div id="introduceGraphic">
+            <div id="introduceGraphic1">
+                <div id="Graphic_text"  class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".8s">
+                    <h1>欢迎来到图琳壁纸,这是一个</h1>
+                    <h1>极具个性化的壁纸网站</h1>
+                    <p>在这里数以万计的壁纸供你下载，当然你也可以分享你喜爱的</p>
+                    <p>你想要做什么？下载壁纸，还是分享</p>
+                    <button>更多</button>
                 </div>
-            </transition>
-            <transition enter-active-class="animate__animated animate__fadeInRight" leave-active-class="animate__animated animate__rollOut">
-                <div id="isdiv" v-show="isimg1"></div>
-            </transition>
-            <div class="ss" >
-                <transition enter-active-class="animate__animated animate__zoomIn"  leave-active-class="animate__animated animate__fadeOutDown">
-                    <div id="isdiv2" v-show="isimg1"></div>
-                </transition>
-            </div>
-            <transition enter-active-class="animate__animated animate__rollIn" leave-active-class="animate__animated animate__fadeOutLeft">
-                <div id="isdiv3" v-show="isimg1"></div>
-            </transition>
-            <transition enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="animate__animated animate__fadeOutLeft">
-                <div id="hr" v-show="isimg1"></div>
-            </transition>
-            <transition enter-active-class="animate__animated animate__fadeInRight" leave-active-class="animate__animated animate__fadeOutRight">
-                <div id="hr2" v-show="isimg1"></div>
-            </transition>
-                <div class="imgContext">
-                    <transition-group enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut">
-                        <div v-if="isimg4" class="boximg">
-                            <h1>丰富的壁纸类别</h1>
-                            <h3>数十种壁纸类型，数万张壁纸</h3>
-                            <h3>你会找到的</h3>
-                        </div>
-                        <div v-if="isimg4" class="boximg2">
-                            <img src="/src/assets/imgs/图形1.png" alt="">
-                            <img src="/src/assets/imgs/图形2.png" alt="">
-                             <h1>个人中心</h1>
-                             <h3>发布和收藏属于你的壁纸</h3>
-                        </div>
-                        <div v-if="isimg4" class="boximg3">
-                            <h1>个性化设计</h1>
-                            <h3>简单、直观的网站界面、人性化的设计</h3>
-                            <img src="/src/assets/imgs/卡片1.jpg" alt="">
-                            <img src="/src/assets/imgs/卡片2.jpg" alt="">
-                            <img src="/src/assets/imgs/卡片3.jpg" alt="">
-                            <img src="/src/assets/imgs/卡片4.jpg" alt="">
-                            <img src="/src/assets/imgs/卡片5.jpg" alt="">
-                            <img src="/src/assets/imgs/卡片6.jpg" alt="">
-                        </div>
-                        <div v-if="isimg4" class="boximg4">
-                            <h1>高分辨率</h1>
-                            <div><span>1024_768、</span>
-                            <span>1280_800、</span>
-                            <span>1280_1024</span><br>
-                            <span>1366_768、</span>
-                            <span>1440_900、</span>
-                            <span>1600_900</span></div>
-                             <h3>多种分辨率供你选择</h3>
-                        </div>
-                        <div v-if="isimg4" class="boximg5">
-                            <h1>丰富的功能</h1> 
-                            <h3>在后期能推出游戏、聊天等功能</h3>
-                        </div>
-                    </transition-group>
+                <div id="Graphic_img"  class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay="1.2s">
+                    <img src="/src/assets/imgs/Daughter of the Forest/森林之女.png" alt="森林之女" title="森林之女">
                 </div>
             </div>
-        <div class="imgList" v-for="item in arr" :key="item.id" :style="{
-            width:'100%',height:'1000px',backgroundImage:'url('+ item.url +')',backgroundSize:'100% 100%'}">
-            <router-link class="hvr-buzz-out" :to="`/Homeimg/${item.id}`">{{item.name}}</router-link>
+            <div id="introduceGraphic2">
+                <div id="Graphic_img2"  class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".5s">
+                    <img src="/src/assets/imgs/Daughter of the Forest/森林之女端坐形态.png" alt="森林之女" title="森林之女端坐形态">
+                </div>
+                <div id="Graphic_text2"  class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".7s">
+                    <h1>提供丰富的壁纸种类</h1>
+                    <h1>不同分辨率供其下载</h1>
+                    <p>属于用户自己个人账号，发布自己喜欢的壁纸</p>
+                    <p>下载或者是分享你喜爱的壁纸</p>
+                </div>
+            </div>
+            <div id="introduceGraphic3">
+                
+            </div>
+          </div>
+          <allstars/>
+          <div id="introduce">
+            <div id="introduce_text" class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+                <h1>独特的创作想象和奇特</h1>
+                <h1>的设计思路</h1>
+                <p style="margin-top: .2rem;">分享所喜爱、富有创造力、美的东西</p>
+                <p>使用了以下来构建它</p>
+            </div>
+            <div id="my-div">
+                <div id="surround" class="wow animate__zoomIn" data-wow-duration=".5s" data-wow-delay=".3s"></div>
+            </div>
+            <div id="my-div1">
+                <div id="surround1" class="wow animate__zoomIn" data-wow-duration=".5s" data-wow-delay=".4s"></div>
+            </div>
+            <div id="my-div2">
+                <div id="surround2" class="wow animate__zoomIn" data-wow-duration=".5s" data-wow-delay=".5s">
+                    <img src="/src/assets/imgs/DM_20240108153002_001.png" alt="">
+                </div>
+            </div>
+            <div id="my-div3">
+                <div id="surround3" class="wow animate__zoomIn" data-wow-duration=".5s" data-wow-delay=".6s">
+                    <img src="/src/assets/imgs/DM_20240108153005_001.png" alt="">
+                </div>
+            </div>
+            <div id="my-div4">
+                <div id="surround4" class="wow animate__zoomIn" data-wow-duration=".5s" data-wow-delay=".7s">
+                    <img src="/src/assets/imgs/DM_20240108153009_001.png" alt="">
+                </div>
+            </div>
+            <div id="my-div5">
+                <div id="surround5" class="wow animate__zoomIn" data-wow-duration=".5s" data-wow-delay=".8s">
+                    <img src="/src/assets/imgs/DM_20240108153010_001.png" alt="">
+                </div>
+            </div>
+            <div id="my-div6">
+                <div id="surround6" class="wow animate__zoomIn" data-wow-duration=".5s" data-wow-delay=".9s"></div>
+            </div>
+            <div id="my-div7">
+                <div id="surround7" class="wow animate__zoomIn" data-wow-duration=".5s" data-wow-delay="1s"></div>
+            </div>
+          </div>
+          <div id="introduceimg">
+                <div id="introduce_title" >
+                    <div id="svg1" class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay="1.2s"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path style="color: rgb(70, 216, 167);" d="M17.0388 2.42828C18.1241 -0.220881 21.8757 -0.220888 22.961 2.42828L26.6993 11.553C27.0243 12.3463 27.6541 12.976 28.4473 13.301L37.5721 17.0393C40.2212 18.1246 40.2213 21.8762 37.5721 22.9615L28.4473 26.6998C27.6541 27.0248 27.0243 27.6546 26.6993 28.4478L22.9611 37.5726C21.8757 40.2217 18.1241 40.2217 17.0388 37.5726L13.3005 28.4478C12.9755 27.6546 12.3458 27.0248 11.5525 26.6998L2.42779 22.9616C-0.22137 21.8762 -0.221376 18.1246 2.42779 17.0393L11.5525 13.301C12.3458 12.976 12.9755 12.3463 13.3005 11.553L17.0388 2.42828Z" fill="currentColor"></path>
+                    </svg></div>
+                    <h1 class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".5s">图琳,一个简单极致,丰富多彩的壁纸网站</h1>
+                    <span class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".5s"></span>
+                    <span class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".5s">时光会走远，照片才会永存</span>
+                    <div id="svg2" class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay="1.2s"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path style="color: rgb(92, 159, 232);" d="M17.0388 2.42828C18.1241 -0.220881 21.8757 -0.220888 22.961 2.42828L26.6993 11.553C27.0243 12.3463 27.6541 12.976 28.4473 13.301L37.5721 17.0393C40.2212 18.1246 40.2213 21.8762 37.5721 22.9615L28.4473 26.6998C27.6541 27.0248 27.0243 27.6546 26.6993 28.4478L22.9611 37.5726C21.8757 40.2217 18.1241 40.2217 17.0388 37.5726L13.3005 28.4478C12.9755 27.6546 12.3458 27.0248 11.5525 26.6998L2.42779 22.9616C-0.22137 21.8762 -0.221376 18.1246 2.42779 17.0393L11.5525 13.301C12.3458 12.976 12.9755 12.3463 13.3005 11.553L17.0388 2.42828Z" fill="currentColor"></path>
+                    </svg></div>
+                </div>
+                <div id="introduce_img">
+                    <img class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s" src="/src/assets/imgs/wallhaven.png" alt="">   
+                    <img class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".6s" src="/src/assets/imgs/节日美图.png" alt="">   
+                    <img class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay="1s" src="/src/assets/imgs/风景大片.png" alt="">   
+                    <img  class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s" src="/src/assets/imgs/小清新.png" alt="">   
+                    <img class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".3s" src="/src/assets/imgs/炫酷时尚.png" alt="">   
+                    <img class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".7s" src="/src/assets/imgs/4k专区.png" alt="">   
+                </div>
+          </div>
+         
         </div>
     </div>
     <el-backtop :right="40" :bottom="40" visibility-height="900"/>
@@ -104,42 +110,16 @@ import 'hover.css'
 import {ref,onMounted} from "vue"
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-const isTl1=ref(false)
-const isTl2=ref(false)
-const isTl3=ref(false)  
-const isTl4=ref(false)  
-const isTl5=ref(false)  
-const isTl6=ref(false)  
-const isTl7=ref(false)
-const isimg1=ref(false) 
-const isimg2=ref(false) 
-const isimg3=ref(false) 
-const isimg4=ref(false) 
+import allstars from '../../../components/allstars.vue'
 gsap.registerPlugin(ScrollTrigger)
-    let arr=[
-    {url:'/src//assets/imgs/4K专区.png',id:36,name:"4K专区"},
-    {url:'/src/assets/imgs/美女模特.png',id:6,name:"美女模特"},
-    {url:'/src/assets/imgs/爱情美图.png',id:30,name:"爱情美图"},
-    {url:'/src/assets/imgs/风景大片.png',id:9,name:"风景大片"},
-    {url:'/src/assets/imgs/小清新.png',id:15,name:"小清新"},
-    {url:'/src/assets/imgs/动漫卡通.png',id:26,name:"动漫卡通"},
-    {url:'/src/assets/imgs/明星风尚.png',id:11,name:"明星风尚"},
-    {url:'/src/assets/imgs/萌宠动物.png',id:14,name:"萌宠动物"},
-    {url:'/src/assets/imgs/游戏壁纸.png',id:5,name:"游戏壁纸"},
-    {url:'/src/assets/imgs/汽车天下.png',id:12,name:"汽车天下"},
-    {url:'/src/assets/imgs/炫酷时尚.png',id:10,name:"炫酷时尚"},
-    {url:'/src/assets/imgs/月历壁纸.png',id:29,name:"月历壁纸"},
-    {url:'/src/assets/imgs/影视剧照.png',id:7,name:"影视剧照"},
-    {url:'/src/assets/imgs/节日美图.png',id:13,name:"节日美图"},
-    {url:'/src/assets/imgs/军事天地.png',id:22,name:"军事天地"}]
     onMounted(()=>{
-    ScrollTrigger.create({
-        trigger:".recommendbox",
-        start:'top top',
-        end:'8300',
-        // markers:true,
-        pin:true,
-    })
+    // ScrollTrigger.create({
+    //     trigger:".recommendbox",
+    //     start:'top top',
+    //     end:'2000',
+    //     // markers:true,
+    //     pin:true,
+    // })
      const divs = document.querySelectorAll('.homeContext')[0].children
       Array.from(divs).forEach((div)=> {
         gsap.fromTo(
@@ -157,366 +137,384 @@ gsap.registerPlugin(ScrollTrigger)
                 }
         })
     })
-    let time=null
-    function throttle(data:any,time:any){
-        if(time!=null) {
-            clearTimeout(time)
-            time=null
-            }
-        if(time=null){
-                time=setTimeout(()=>{
-                    data()
-                     clearTimeout(time)
-                     time = null
-            },time)
-            }
-    }
-     window.addEventListener('scroll', function(){
-        let scrollTop = document.documentElement.scrollTop
-        if(scrollTop>=1300 && scrollTop<=2800){
-              isTl1.value=true
-        }else isTl1.value=false
-        if (scrollTop>=1400 && scrollTop<=2950) {
-            isTl2.value=true
-        }else isTl2.value=false
-        if (scrollTop>=1600 && scrollTop<=3100) {
-            isTl3.value=true
-        }else isTl3.value=false
-        if (scrollTop>=3200 && scrollTop<=4100) {
-            isTl4.value=true
-        }else isTl4.value=false
-        if (scrollTop>=3350 && scrollTop<=4200) {
-            isTl5.value=true
-        }else isTl5.value=false
-        if (scrollTop>=3500 && scrollTop<=4300) {
-            isTl6.value=true
-        }else isTl6.value=false
-         if (scrollTop>=8200) {
-            isTl7.value=true
-        }else isTl7.value=false
-        if (scrollTop>=1300 && scrollTop<=5000) {
-            isimg1.value=true
-        }else isimg1.value=false
-         if (scrollTop>=1600 && scrollTop<=5200) {
-            isimg2.value=true
-        }else isimg2.value=false
-        if (scrollTop>=5200 && scrollTop<=8000) {
-            isimg4.value=true
-        }else isimg4.value=false  
-         if(scrollTop>=5400 && scrollTop<=5999){
-           throttle(render1(),100)
-          function render1(){
-                gsap.to('.boximg',{x:0,y:0,rotation:0,duration:1,})
-                gsap.to('.boximg2',{x:0,y:0,rotation:15,duration:1,})
-                gsap.to('.boximg3',{x:0,y:100,rotation:15,duration:1,})
-                gsap.to('.boximg4',{x:0,y:100,rotation:15,duration:1,})
-                gsap.to('.boximg5',{x:0,y:100,rotation:15,duration:1,})
-           }
-        }
-        if(scrollTop>=6000 && scrollTop<=6500){
-           throttle(render2(),100)
-          function render2(){
-                gsap.to('.boximg',{x:-550,y:100,rotation:-15,duration:1,})
-                gsap.to('.boximg2',{x:-550,y:-100,rotation:0,duration:1,})
-                gsap.to('.boximg3',{x:-550,y:-100,rotation:15,duration:1,})
-                gsap.to('.boximg4',{x:-550,y:-100,rotation:15,duration:1,})
-                gsap.to('.boximg5',{x:-550,y:-100,rotation:15,duration:1,})
-           }
-        }
-        else if(scrollTop>=6501 && scrollTop<=7000){
-            throttle(render3(),100)
-            function render3() {
-                gsap.to('.boximg',{x:-1100,y:200,rotation:-15,duration:1,})
-                gsap.to('.boximg2',{x:-1100,y:0,rotation:-15,duration:1,})
-                gsap.to('.boximg3',{x:-1100,y:-200,rotation:0,duration:1,})
-                gsap.to('.boximg4',{x:-1100,y:-200,rotation:15,duration:1,})
-                gsap.to('.boximg5',{x:-1100,y:-100,rotation:15,duration:1,})
-            }
-        }
-        else if(scrollTop>=7001 && scrollTop<=7500){
-            throttle(render4(),200)
-            function render4() {
-                gsap.to('.boximg',{x:-1550,y:200,rotation:-15,duration:1,})
-                gsap.to('.boximg2',{x:-1550,y:100,rotation:-15,duration:1,})
-                gsap.to('.boximg3',{x:-1550,y:-100,rotation:-15,duration:1,})
-                gsap.to('.boximg4',{x:-1550,y:-300,rotation:0,duration:1,})
-                gsap.to('.boximg5',{x:-1550,y:-300,rotation:15,duration:1,})
-            }
-          
-        }
-        else if(scrollTop>=7501&& scrollTop<=7999){
-            throttle(render5(),200)
-            function render5() {
-                gsap.to('.boximg',{x:-2100,y:300,rotation:-15,duration:1,})
-                gsap.to('.boximg2',{x:-2100,y:200,rotation:-15,duration:1,})
-                gsap.to('.boximg3',{x:-2100,y:0,rotation:-15,duration:1,})
-                gsap.to('.boximg4',{x:-2100,y:-200,rotation:-15,duration:1,})
-                gsap.to('.boximg5',{x:-2100,y:-390,rotation:0,duration:1,})
-            }
-        }
-     })
 })
 </script>
 
-<style  lang="scss" scope>
- @mixin wh($w,$h){
-        width: $w;
-        height: $h;
-    }
-      .homeContext{
-        position: absolute; 
-        width: 100%;
-        height: 35rem;
-        top: 100%;
-        .recommendbox{
-            height: 40rem;
-            width: 100%;
-           background: linear-gradient(to bottom, #162422, #183430, #18463f, #17584d, #136a5c, #0f766c, #08837d, #008f8e, #0096a5, #009dbc, #00a2d3, #3fc2f6);
-        }
-        .imgList{
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            a{
-                position: absolute;
-                color: white;
-                font-size: .5rem;
-                left: 44%;
-                top: 50%;
-                letter-spacing: 5px;
-                font-weight: 800;
-                filter: drop-shadow(2px 2px 3px #4e4e4e);
-                text-decoration: none;
-            }
-        }
-    }
-    
-    #text1,#text2,#text3,#text4,#text5,#text6,#text7{
-        position: absolute;
-        color: white;
-        letter-spacing: .0625rem;
-        font-size: .4rem;
-     }
-    #text1,#text4{
-        top: 1.25rem;
-        left: 2.5rem;
-     }
-    #text2,#text5{
-        top: 2.1875rem;
-        left: 3.125rem;
-     }
-    #text3,#text6{
-        top: 3.125rem;
-        left:3.75rem;
-     }
-     #text7{
-        position: fixed;
-        color: white;
-       left: 6rem;
-       top: 14em;
-        h1:nth-child(2){
-        margin-top: .1875rem;
-        margin-left: 2rem;
-      }
-      h3{
-        margin-top: .3125rem;
-         color: rgb(196, 196, 196);
-         margin-left: 2rem;
-      }
-     }
-     #isdiv{
-        position: absolute;
-        width: 7.5rem;
-        height: 7.5rem;
-        border-radius: 50%;
-        background-image: url(https://uploads-ssl.webflow.com/64234435e1b26d060e67230a/64234435e1b26dcb4767235e_texture.png),linear-gradient(279deg,#275227,#3dd3b0 25%);
-        right: -2.7rem;
-        top: -5.5%;
-        filter: blur(.0075rem);
-        opacity: .85!important;
-    }
-    .ss{
-        position: absolute;
-        width: 6.25rem;
-        height: 11.25rem;
-       left: 2.5rem;
-        top: 5.25rem;
-        border-radius: 3.75rem; 
-        transform: rotate(45deg);
-    }
-    #isdiv2{
-        position: absolute;
-        width: 6.25rem;
-        height: 11.25rem;
-        border-radius: 3.75rem;
-        background-image: url(https://uploads-ssl.webflow.com/64234435e1b26d060e67230a/64234435e1b26dcb4767235e_texture.png), linear-gradient(to right bottom, #edec96, #fadb93, #ffcb97, #fcbe9f, #f3b3a7, #f0b1a0, #ecaf99, #e8ae92, #dcb97f, #bdc87b, #8bd690, #27e1bc);
-        opacity: .85!important;
-    }
-     #isdiv3{
-        position: absolute;
-        width: 3.75rem;
-        height: 3.75rem;
-        border-radius: 3.75rem;
-        background-image: url(https://uploads-ssl.webflow.com/64234435e1b26d060e67230a/64234435e1b26dcb4767235e_texture.png),linear-gradient(to right top, #e165e7, #ff68aa, #ff8b7e, #fbb171, #decf89);
-        top: 5.975rem;
-        left: -1.125rem;
-        opacity: .85!important;
-    }
-    #hr{
-        position: fixed;
-        background: whitesmoke;
-        height: .0375rem;
-        width:74%;
-        left: 5%;
-        top: .1875rem;
-        border-radius:.125rem;
-    }
-    #hr2{
-        position: fixed;
-        background: whitesmoke;
-        height: .0375rem;
-        width:40%;
-        right: 4%;
-        bottom: 10%  ;
-        border-radius:.125rem;
-    }
-    .imgContext{
-        position: fixed;
-        @include wh(6rem,7.5rem);
-        top: 3rem;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .boximg,.boximg2,.boximg3,.boximg4,.boximg5{
-        position: absolute;
-        @include wh(6rem,7.5rem);
-        border-radius :.375rem;
-        border: 1px solid rgb(129, 129, 129);
-        backdrop-filter: blur(2px);
-        background: rgba(7, 168, 176, 0.246);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: white;
-        font-size: .3rem;
-        box-shadow: inset 1px 1px 3px rgba(255, 255, 255, .15);
-        h3{
-            color: rgb(196, 196, 196);
-        }
-    }
-    .boximg{
-        h1{
-            margin-top: 3.125rem;
-            font-size: .5rem;
-        }
-        h3:nth-child(2){
-            margin-top: .125rem;
-        }
-       
-    }
-    .boximg2{
-        left: 8.125rem;
-        top:1.25rem;
-        rotate: 15deg;
-        overflow: hidden;
+<style  lang="scss" >
+@import '/src/styles/color.scss';
+.homeContext{
+    width: 100%;
+    min-height: 80rem;
+    top: 100%;
+    .recommendbox{
         position: relative;
-        img{
-            @include wh(5rem,5rem)
+        min-height: 80rem;
+        width: 100%;
+            background-image: linear-gradient(to bottom, #162422, #183430, #18463f, #17584d, #136a5c, #0f766c, #08837d, #008f8e, #0096a5, #009dbc, #00a2d3, #3fc2f6), url('/src/assets/imgs/DM_20240107150704_001.svg');
+            background-size: cover,120%;
+            background-blend-mode:color;
+            background-position:40% 60%;
+            background-repeat: no-repeat,no-repeat;
+            background-size: 110% 160%;
         }
-        img:nth-child(1){
-            position: absolute;
-            left: 40%;
-            top:20%;
-            transform: rotate(-15deg);
-        }
-         img:nth-child(2){
-            position: absolute;
-            bottom: -21%;
-            left: -21%;
-            transform: rotate(-85deg);
-        }
-        h1{
-            font-size: .5rem;
-            margin-top: 1rem;
-        }
-        h3{
-            margin-top: .125rem;
-        }
-    }
-    .boximg3{
-        left: 16.25rem;
-        top: 2.5rem;
-        rotate: 30deg;
-        overflow: hidden;
-         h1{
-            margin-top: 1.25rem;
-            font-size: .5rem;
-        }
-        h3{
-            margin-top: .125rem;
-        }
-        img{
-            position: absolute;
-            border-radius: .125rem;
-            box-shadow: 1px 1px 3px 2px rgb(99, 99, 99);
-        }
-        img:nth-child(3){
-            @include wh(250px,150px);
-            top: 70%;
-            left: 35%;
-        }
-        img:nth-child(4){
-              @include wh(250px,150px);
-              top:44%;
+        #introduceGraphic{
+                @include wh(100%,30rem);
+                position: relative;
+                z-index: 1;
+               @include flex4();
+                #introduceGraphic1,#introduceGraphic2,#introduceGraphic3{
+                    display: flex;
+                    flex: 1;
+                }
+                #introduceGraphic1{
+                    #Graphic_text{
+                        @include flex11();
+                        @include wh(100%,7rem);
+                        flex: 1;
+                        padding-left: 3rem;
+                        h1{
+                            @include fontsize($Oversizeds,$white);
+                            text-shadow: 0 1px rgba(0,0,0,.07);
+                            -webkit-text-fill-color: transparent;
+                            -webkit-background-clip: text;
+                            background-clip: text;
+                            background-image: linear-gradient(145deg,#f8f9f7 65%,rgba(203, 217, 201, 0.43));
+                        }
+                        p{
+                            @include fontsize($Oversized,$grayColor);
+                            font-family: '方正幼圆';
+                            font-weight: 600;
+                            padding-top: .1rem;
+                        }
+                        h1:nth-child(2){
+                            @include fontsize($Oversizeds2,$white);
+                        }
+                        p:nth-child(3){
+                            padding-top: .3rem;
+                        }
+                        button{
+                            position: relative;
+                            margin-top: .3rem;
+                            @include wh(2rem,.75rem);
+                            line-height: .7rem;
+                            text-align: center;
+                            border: .07rem solid $black;
+                            background-color: $white;
+                            border-radius: .375rem;
+                            @include fontsize($Oversized,$black);
+                            padding-left: .4rem;
+                            transition: .3s;
+                            margin-left: .4rem;
+                        }
+                        button:before{
+                            position: absolute;
+                            content: '';
+                            @include wh(.4rem,.4rem);
+                            border: .07rem solid #33c19e;
+                            background-color: $white;
+                            margin-top: .045rem;
+                            left: .13rem;
+                            border-radius: 50%;
+                        }
+                        button:hover{
+                          color: #2dc961;
+                          background-color: #ebeded;
+                        }
+                        button:before:hover{
+                            border: .07rem solid #337ac1;
+                        }
+                    }
+                    #Graphic_img{
+                        padding-top: 1.25rem;
+                        @include flex11();
+                        flex: 1;
+                        img{
+                            @include wh(10rem,10rem);
+                            filter: drop-shadow(.03rem .03rem .03rem #efeeee);
+                        }
+                    }
+                }
+                #introduceGraphic2{
+                    margin-top: 1.25rem;
+                    #Graphic_img2{
+                        flex: 1;
+                        display: flex;
+                        justify-content: end;
+                        img{
+                            @include wh(9rem,9rem);
+                            filter: drop-shadow(-.02rem -.02rem .02rem #efeeee);
+                        }
+                    }
+                    #Graphic_text2{
+                        @include flex12();
+                        flex: 1;
+                        margin-right: 2.4rem;
+                        margin-top: 2rem;
+                        h1{
+                            @include fontsize($Oversizeds,$white);
+                            text-shadow: 0 1px rgba(0,0,0,.07);
+                            -webkit-text-fill-color: transparent;
+                            -webkit-background-clip: text;
+                            background-clip: text;
+                            background-image: linear-gradient(145deg,#f8f9f7 65%,rgba(203, 217, 201, 0.43));
+                        }
+                        p{
+                            @include fontsize($Oversized,$grayColor);
+                            font-family: '方正幼圆';
+                            font-weight: 600;
+                            padding-top: .1rem;
+                        }
+                        h1:nth-child(2){
+                            @include fontsize($Oversizeds2,$white);
+                            margin-right: .375rem;
+                        }
+                        p:nth-child(3){
+                            padding-top: .3rem;
+                            margin-right: .375rem;
+                        }
+                        p:nth-child(4){
+                            margin-right: .375rem;
+                        }
+                    }
+                }
+            }
+        #introduce{
+            position: relative;
+            @include wh(100%,20rem);
+            @include flex5();
+            background:url('/src/assets/imgs/DM_20240107150704_001.svg')no-repeat;
+            background-position:100% 100%;
+            background-size: 100% 100%;
+            #introduce_text{
+                z-index: 5;
+                @include wh(100%,3rem);
+                position: absolute;
+                top: 0;
+                @include flex8();
+                h1{
+                    letter-spacing: 0.07rem;
+                    @include fontsize($Oversizeds,$white);
+                    font-family: '方正幼圆';
+                    text-shadow: 0 1px rgba(0,0,0,.07);
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-image: linear-gradient(145deg,#f8f9f7 65%,rgba(203, 217, 201, 0.43));
+                }
+                p{
+                    @include fontsize($Oversized,$grayColor);
+                    font-family: '方正幼圆';
+                    font-weight: 00;
+                }
+            }
+            #my-div,#my-div1,#my-div2,#my-div3,#my-div4,#my-div5,#my-div6,#my-div7 {
+                position: absolute;
+                @include wh(1.3rem,1.3rem);
+                border-radius: 50%;
+                background-image: linear-gradient(to right top, #e2e2e2, #ebf3eb, #e2f1e4, #d9efdd, #d0edd7, #c7e8d0, #bee3c8, #b5dec1, #acd5b7, #a2ccad, #99c4a3, #90bb99);
+               box-shadow: .03rem .03rem .08rem rgb(69, 69, 69);
+            }
+            #my-div{
+                animation: circle 30s linear 0s infinite;
+            }
+            #my-div1 {
+                animation: circle 40s linear 0s infinite;
+            }
+            #my-div2 {
+                animation: circle 50s linear 0s infinite;
+            }
+            #my-div3 {
+                animation: circle 60s linear 0s infinite;
+            }
+            #my-div4 {
+                animation: circle 70s linear 0s infinite;
+            }
+            #my-div5 {
+                animation: circle 80s linear 0s infinite;
+            }
+            #my-div6 {
+                animation: circle 90s linear 0s infinite;
+            }
+            #my-div7 {
+                animation: circle 100s linear 0s infinite;
+            }
+            #surround2,#surround3,#surround4,#surround5,#surround6{
+                position: relative;
+                img{
+                    position: absolute;
+                    width: 100%;
+                }
+            }
+            #surround{
+                @include wh(.5rem,.5rem);
+                margin-left: 1.6rem;
+                background: url('/src/assets/imgs/DM_20240107232602_001.png')no-repeat;
+                background-size: 100% 100%;
+            }
+            #surround1{
+                @include wh(.7rem,.7rem);
+                margin-top: 2.3rem;
+                background: url('/src/assets/imgs/DM_20240107232603_001.png')no-repeat;
+                background-size: 100% 100%;
+            }
+            #surround2{
+                @include wh(1.3rem,1.3rem);
+                margin-left: -2.2rem;
+                margin-top: 3rem;
+                background: url('/src/assets/imgs/DM_20240107232605_001.png')no-repeat;
+                background-size: 100% 100%;
+            }
+            #surround3{
+                @include wh(1.8rem,1.8rem);
+                margin-left: 4rem;
+                background: url('/src/assets/imgs/DM_20240107232618_001.png')no-repeat;
+                background-size: 100% 100%;
+            }
+            #surround4{
+                @include wh(2.3rem,2.3rem);
+                margin-left: -6rem;
+                background: url('/src/assets/imgs/DM_20240107232622_001.png')no-repeat;
+                background-size: 100% 100%;
+               
+            }
+            #surround5{
+                @include wh(1.7rem,1.7rem);
+                margin-top: -7rem;
+                background: url('/src/assets/imgs/DM_20240107232624_001.png')no-repeat;
+                background-size: 100% 100%;
+                z-index: 3;
+            }
+            #surround6{
+                @include wh(1.5rem,.88rem);
+                margin-top: -5.8rem;
+                margin-left: -5.8rem;
+                background: url('/src/assets/imgs/DM_20240107232626_001.png')no-repeat;
+                background-size: 100% 100%;
+            }
+            #surround6::after{
+                position: absolute;
+                content: '';
+                @include wh(100%,100%);
+                background: url('/src/assets/imgs/646d305e55cd2ce9f378af65_planet-brown-ring.png')no-repeat;
+                background-size: 100% 100%;
+            }
+            #surround7{
+                @include wh(.6rem,.6rem);
+                margin-top: 6.3rem;
+                margin-left: -6rem;
+                background: url('/src/assets/imgs/DM_20240107232629_001.png')no-repeat;
+                background-size: 100% 100%;
+            }
+            @keyframes circle {
+                from { transform:rotate(0deg); }
+                to { transform:rotate(360deg); }
+            }
+            @keyframes inner-circle{
+                from{
+                    transform: rotate(360deg);
+                }
+            }
+     }
+        #introduceimg{
+            position: relative;
+            @include wh(100%,18rem);
+            @include flex10();
+            #introduce_title{
+                @include flex10();
+                #svg1{
+                    position: relative;
+                    @include wh(.7rem,.7rem);
+                    left: -54%;
+                    top: 20%;
+                    svg{
+                        @include wh(100%,100%);
+                    }
+                }
+                #svg2{
+                    position: relative;
+                    @include wh(.7rem,.7rem);
+                    left: 54%;
+                    top: -60%;
+                    svg{
+                        @include wh(100%,100%);
+                    }
+                }
+                h1{
+                    letter-spacing: 0.04rem;
+                    @include fontsize($Oversizeds,$white);
+                    font-family: '方正幼圆';
+                    text-shadow: 0 1px rgba(0,0,0,.07);
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-image: linear-gradient(145deg,#ffffff 65%,rgba(203, 217, 201, 0.43));
+                }
+                span:nth-child(2){
+                    margin-top: .4rem;
+                }
+                span{
+                    margin-top: .125rem;
+                    @include fontsize($Oversized,$white);
+                    font-family: '方正幼圆';
+                    font-weight: 500;
+                }
+                span:nth-child(3){
+                    @include fontsize($Oversized,$grayColor);
+                    font-family: '方正幼圆';
+                    margin-top: .1rem;
+                }
+            }
+            #introduce_img{
+                position: relative;
+                @include wh(100%,12rem);
               
-        }
-        img:nth-child(5){
-              @include wh(200px,120px);
-              top:49%;
-              left: -19.5%;
-        }
-        img:nth-child(6){
-             @include wh(200px,120px);
-              top:49%;
-              left: 78%;
-        }
-        img:nth-child(7){
-             @include wh(200px,120px);
-              top:70%;
-              left: -8%;
-        }
-        img:nth-child(8){
-             @include wh(200px,120px);
-              top:70%;
-              left: 89%;
-        }
-    }
-    .boximg4{
-        left: 24.375rem;
-        top: 3.75rem;
-        rotate: 45deg;
-        h1{
-            margin-top: 2.5rem;
-           
-        }
-    
-        span{
-            font-size: .25rem;
-        }
-        span,h3{
-             color: rgb(196, 196, 196);
-             margin-top: .125rem;
-        }
-    }
-    .boximg5{
-         left: 32.5rem;
-        top: 5rem;
-        rotate: 60deg;
-        h1{
-            margin-top: 1.25rem;
-        }
-        h3{
-            margin-top: .125rem;
+                img{
+                    position: absolute;
+                    box-shadow:.02rem .05rem .1rem rgb(60, 60, 60);
+                }
+                img:nth-child(1){
+                    @include wh(10rem,6rem);
+                    border: .02rem solid $white;
+                    left: 30%;
+                    top: 20%;
+                    z-index: 5;
+                }
+                img:nth-child(2){
+                    @include wh(6rem,3.5rem);
+                    border: .02rem solid $white;
+                    left: 60%;
+                    top: 55%;
+                    z-index: 4;
+                }
+                img:nth-child(3){
+                    @include wh(5rem,3rem);
+                    border: .02rem solid $white;
+                    left: 20%;
+                    top: 55%;
+                    z-index: 6;
+                }
+                img:nth-child(4){
+                    @include wh(6rem,3rem);
+                    border: .02rem solid $white;
+                    left: 56%;
+                    top: 25%;
+                    z-index: 2;
+                }
+                img:nth-child(5){
+                    @include wh(5rem,3rem);
+                    border: .02rem solid $white;
+                    left: 20%;
+                    top: 10%;
+                    z-index: 2;
+                }
+                img:nth-child(6){
+                    @include wh(5rem,3rem);
+                    border: .02rem solid $white;
+                    left:48%;
+                    top: 0%;
+                    z-index: 1;
+                }
+            }
         }
     }
 </style>

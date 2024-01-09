@@ -2,15 +2,16 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-09-05 10:23:51
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-02 20:57:30
+ * @LastEditTime: 2024-01-07 16:59:32
  * @FilePath: \Vue-wallpapers\src\main.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 
 import './assets/main.css'
-import Elementplus from 'element-plus'
-import 'element-plus/theme-chalk/index.css'
-
+import 'animate.css'
+import 'animate.css/animate.compat.css'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
@@ -33,7 +34,6 @@ import './utils/rem.ts'
 
 import axios from './apis/loginUluli.ts'
 const app = createApp(App)
-
 app.use(createPinia())
 app.use(router)
 app.use(VueMasonryPlugin)
@@ -47,7 +47,7 @@ app.use(lazyPlugins, {
   loading: img2,
   error: img1,
 })
-app.use(Elementplus)
+
 app.use(vPreviewImage)
 app.mount('#app')
 app.config.globalProperties.$axios = axios;

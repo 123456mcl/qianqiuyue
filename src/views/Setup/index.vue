@@ -1,24 +1,19 @@
 <!--
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @Date: 2024-01-03 23:19:10
+ * @Date: 2024-01-06 23:43:52
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-03 23:21:06
- * @FilePath: \Vue-wallpapers site\src\components\1.html
+ * @LastEditTime: 2024-01-06 23:50:24
+ * @FilePath: \Vue-wallpapers site\src\views\Setup\index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        let str='勃朗宁 自动手枪 手枪 枪'
-        if(str.indexOf('自动')!=-1){
-            console.log('=====');
-        }
-    </script>
-</body>
-</html>
+<script setup lang="ts">
+import setup from './components/setup.vue'
+</script>
+
+<template>
+     <setup/>
+</template>
+
+<style lang="scss">
+   @import '/src/styles/color.scss';
+</style>

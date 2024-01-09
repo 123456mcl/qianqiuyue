@@ -1,10 +1,9 @@
 <script setup lang="ts">
-    
 </script>
 
 <template>
     <header>
-        <div class="Carousel">
+        <div id="Carousel" class="wow animate__slideInDown" data-wow-duration="1s" data-wow-delay=".5s">
             <el-carousel >
                 <el-carousel-item v-for="item in 4" :key="item">
                     <div>
@@ -14,19 +13,19 @@
             </el-carousel>
         </div>
         <div class="Section" >
-            <div>
+            <div class="animate__animated animate__fadeInLeft">
                 <h1>动漫</h1>
             </div>
-            <div>
+            <div class="animate__animated animate__fadeInTopLeft">
                 <h1>风景</h1>
             </div>
-            <div>
+            <div class="animate__animated animate__fadeInDown">
                 <h1>AI</h1>
             </div>
-            <div>
+            <div class="animate__animated animate__fadeInTopRight">
                 <h1>军事天地</h1>
             </div>
-            <div>
+            <div class="animate__animated animate__fadeInRight">
                 <h1>概念科幻</h1>
             </div>
         </div>
@@ -45,9 +44,7 @@
 
             </div>
         </div>
-         <keep-alive>
-            <router-view/>
-         </keep-alive>
+    <router-view/>
     </header>
    
 </template>
@@ -60,7 +57,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        .Carousel{
+        #Carousel{
             position: relative;
             margin-top: .25rem;
             @include wh2(95%,4rem);
