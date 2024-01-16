@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-12-19 23:13:45
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-07 17:05:49
+ * @LastEditTime: 2024-01-12 22:32:27
  * @FilePath: \Vue-wallpapers site\src\views\Wallpaper\components\ImageComponent\hottest.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted,ref,reactive,onUnmounted } from 'vue';
+import { onMounted,ref,reactive } from 'vue';
 import {getRecommend} from '../../../../apis/getRecommend'
 import { warning } from '../../../../apis/messagePrompt'
 import { useRouter } from 'vue-router'
@@ -81,9 +81,9 @@ setTimeout(()=>{
         threshold:0,
     }
 );
-const load:any = document.querySelector('.boxLoad')
-ob.observe(load)
-},1000)
+    const load:any = document.querySelector('.boxLoad')
+    ob.observe(load)
+    },1000)
 const btn=(e:any)=>{
     const datas = JSON.stringify(data.value)
     router.push({

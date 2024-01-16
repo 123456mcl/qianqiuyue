@@ -3,6 +3,10 @@
     width: $w;
     height: $h;
 }
+@mixin wh2($w,$h){
+    min-width: $w;
+    min-height: $h;
+}
 @mixin flex1(){
     display: flex;
     flex-direction: column;
@@ -65,12 +69,21 @@
     justify-content:start;
     align-items:end;
 }
+@mixin flex13(){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 @mixin fontsize($f,$c){
     font-size: $f ;
     color: $c;
 }
 @mixin wh2($w,$h){
     min-width: $w;
+        min-height: $h;
+}
+@mixin wh3($w,$h){
+    width: $w;
         min-height: $h;
 }
 @mixin tl($w,$h,$v,$n){
@@ -80,10 +93,13 @@
 }
 $Oversizeds:.8rem;
 $Oversizeds2:.6rem;
+$Oversizeds3:.4rem;
 $Oversized:.3125rem;
 $middleSize:.25rem;
 $middleSize2:.28rem;
+$verysmallSize:.225rem;
 $smallSize:.2rem;
+$smallsSize:.15rem;
 
 
 
@@ -95,8 +111,12 @@ $hoverOrange1:rgb(249,217,97); //浅黄
 $grayColor1:rgb(247,247,247); //浅灰
 $grayColor:rgb(189,189,192); //浅灰1
 $grayColor2:rgb(244,244,244); //浅灰2
+$grayColor3:rgba(235, 235, 235,.8); //浅bai3
+$grayColor4:rgb(232, 231, 231); //浅bai4
 $graysColor:rgb(230,234,238); //深灰2
+$whiteColor:rgba(255,255,255,.5); //浅白
 $graysColor3:rgb(153,153,166); //深灰3
+
 $graysColor4:rgb(153,153,166); //深灰3透明
 $graysColor5:rgb(90,80,68); //深灰4
 $black:rgb(102,102,102); //浅黑

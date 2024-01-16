@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-10-21 10:06:03
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-14 19:53:16
+ * @LastEditTime: 2024-01-15 21:32:20
  * @FilePath: \Vue-wallpapers site\src\App.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -16,6 +16,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.use(express.static('upload'))
+app.use(express.static('wallpaper'))
 const joi = require('joi');
 // 解析字符串
 const expressJWT = require('express-jwt')

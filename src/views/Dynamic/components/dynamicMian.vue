@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-12-05 15:12:44
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-18 21:09:48
+ * @LastEditTime: 2024-01-16 12:42:35
  * @FilePath: \Vue-wallpapers site\src\views\Dynamic\components\dynamicMian.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -79,7 +79,7 @@
 
 <script setup lang="ts">
 import {useStore} from '../../../stores/counter'
-import {ref,toRaw,onActivated,reactive} from 'vue'
+import {ref,toRaw,onMounted,reactive} from 'vue'
 import { useRouter } from 'vue-router'
 import { ElUpload, ElButton, ElMessage,ElNotification } from 'element-plus';
 import { log } from 'util';
@@ -106,8 +106,7 @@ const fileList = ref();
 const imgList = ref({
     avatar:''
 });
-onActivated(()=>{
-    const { user_id,information } = useStore().$state
+onMounted(()=>{
     datas.value=useStore().$state
     imgList.value.avatar=datas.value.information.avatar
 })  
@@ -140,7 +139,7 @@ const btn=ref()
                     istrue.value=false
                     btn.value.style.backgroundColor= 'rgb(220, 220, 220)';
                     btn.value.style.color= 'rgb(91, 91, 91)'; 
-                    useStore().$patch((state) => {
+                    useStore().$patch((state:any) => {
                         state.information=r.data.data
                     })
                     isInformation.value=false
@@ -154,7 +153,7 @@ const btn=ref()
             })
         }
 // 获取img参数并解析
-const handleBeforeUpload = (file:never) => {
+const handleBeforeUpload:any= (file:never) => {
   fileList.value = file
   const reader=new FileReader();
   reader.onload=(e:any)=>{

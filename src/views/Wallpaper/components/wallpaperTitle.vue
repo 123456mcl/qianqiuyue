@@ -51,7 +51,6 @@
   
 <style lang="scss" scope>
 @import '/src/styles/color.scss';
-    
     header{
         @include wh2(100%,10rem);
         display: flex;
@@ -103,10 +102,10 @@
                 background: url('/src/assets/imgs/ai.png')no-repeat;
             }
             div:nth-child(4){
-                background: url('/src/assets/imgs/军事天地.png')no-repeat;
+                background: url('/src/assets/imgs/汽车天下.png')no-repeat;
             }
             div:nth-child(5){
-                background: url('/src/assets/imgs/游戏壁纸.png')no-repeat;
+                background: url('/src/assets/imgs/炫酷时尚.png')no-repeat;
             }
             div:nth-child(2),div:nth-child(3),div:nth-child(4),div:nth-child(5),div:nth-child(1){
                 background-size: 200% 200%;

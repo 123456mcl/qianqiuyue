@@ -6,16 +6,30 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-12-09 12:04:16
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-05 18:55:41
+ * @LastEditTime: 2024-01-16 21:17:24
  * @FilePath: \Vue-wallpapers site\server\router-handler\user.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 const sql = require('../db/sql')
 const db = require('../db/index')
 
+function time(){
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1;
+  const day = currentDate.getDate();
+  const hour = currentDate.getHours();
+  const minute = currentDate.getMinutes().toString().padStart(2, '0');
+  const second = currentDate.getSeconds().toString().padStart(2, '0');
+  const time = (year+'-'+month+'-'+day+' '+ hour+':'+minute+':'+second)
+  return time
+}
+
+
+
 exports.url=(req, res) => {
     let {id}=req.body
-    console.log(req.file);
+    console.log(req.file.filename,id);
     db.query(sql?.user?.updataInformation,['http://localhost:8000/'+req.file.filename,id],(err, results) =>{
         if(results){
             db.query(sql?.user?.information,id,(err, results) =>{
@@ -45,14 +59,7 @@ exports.url=(req, res) => {
 }
 exports.uploadComment=(req, res) => {
   let {id,img_id}=req.body
-  const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth() + 1;
-  const day = currentDate.getDate();
-  const hour = currentDate.getHours();
-  const minute = currentDate.getMinutes().toString().padStart(2, '0');
-  const second = currentDate.getSeconds().toString().padStart(2, '0');
-  const time = (year+'-'+month+'-'+day+' '+ hour+':'+minute+':'+second)
+  const time = time()
   db.query(sql?.user?.insertcomments,[Number(img_id),req.body['parameter[textareaValue]'],req.body['parameter[img_avatar]'],req.body['parameter[name]'],Number(id),Number(0),time],(err, results) =>{
     console.log([Number(id),req.body['parameter[textareaValue]'],req.body['parameter[img_avatar]'],req.body['parameter[name]'],Number(img_id)]);
     if(err)res.send({status:404})
@@ -185,4 +192,64 @@ exports.comments=(req, res) => {
         data:results,
     })
     })
+}
+exports.wallpaperCategory=(req, res) => {
+  let data=[
+    {id: 6, name: '美女',url:'http://localhost:8000/file-1705069009730.png'},
+    {id: 30, name: '爱情',url:'http://localhost:8000/file-1705068977948.png'},
+   {id: 9, name: '风景',url:'http://localhost:8000/file-1702730401451.jpg'},
+   {id: 15, name: '小清新',url:'http://localhost:8000/file-1703660872469.jpg'},
+   {id: 26, name: '动漫',url:'http://localhost:8000/file-1705068709871.jpg'},
+   {id: 11, name: '明星',url:'http://localhost:8000/file-1703660872469.jpg'},
+   {id: 5, name: '游戏',url:'http://localhost:8000/file-1702730442086.jpg'},
+   {id: 12, name: '汽车',url:'http://localhost:8000/file-1705069017159.png'},
+   {id: 10, name: '炫酷',url:'http://localhost:8000/file-1705069028992.png'},
+   {id: 7, name: '影视',url:'http://localhost:8000/file-1705069034790.png'},
+   {id: 22, name: '军事',url:'http://localhost:8000/file-1705068999929.png'},
+  ]
+    res.send({
+      status:200,
+      message:'获取成功',
+      data:data,
+    })
+}
+exports.postComments=(req, res) => {
+  let {form,id}=req.body
+  const files = req.files;
+  const newform = JSON.parse(form)
+  const arr = Object.entries(JSON.parse(JSON.stringify(req.files)))
+  const newArr=[]
+  arr.forEach(([key, value]) => {
+    newArr.push('http://localhost:8000/'+value[0].filename)
+  });
+  db.query(sql?.user?.queryid,id,(err, results) =>{
+    if(err)res.send({ status: 404,message:'数据错误'});
+    db.query(sql?.user?.photogallery,[results[0].uname,(newform.labelData).join(','),newArr,time(),0,0,id,newform.name,0,newform,newform.desc.delivery],(err, results) =>{
+      if(err)res.send({ status: 404,message:'数据错误'});
+      console.log(results,'2222');
+      res.send({
+        status:200,
+        message:'上传成功',
+      })
+    })
+    
+  })
+   
+}
+exports.userImg=(req, res) => {
+  const { id } = req.body
+  db.query(sql?.user?.queryid,id,(err, results) =>{
+    if(err)res.send({ status: 404,message:'数据错误'});
+    db.query(sql?.user?.dailyImg,results[0].uname,(err, results) =>{
+    const arr = results.map((result, index) => {
+      result.img_url = result.img_url.split(",")
+      return result
+    })
+      res.send({
+        status:200,
+        message:'上传成功',
+        data:arr
+      })
+    });
+  })
 }

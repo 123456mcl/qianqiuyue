@@ -9,6 +9,7 @@ body {
   height: 100%;
   font-family: '荆体';
   scroll-behavior:smooth;
+  position: relative
 }
 @font-face {
   font-family: '荆体';

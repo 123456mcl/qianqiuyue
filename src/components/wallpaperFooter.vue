@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-12-29 18:44:24
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-07 16:26:46
+ * @LastEditTime: 2024-01-13 20:29:23
  * @FilePath: \Vue-wallpapers site\src\views\Wallpaper\components\ImageComponent\wallpaperFooter.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -58,7 +58,7 @@
 <style lang="scss" scoped>
  @import '/src/styles/color.scss';
  footer{
-    @include wh(100,6rem);
+    @include wh(100%,6rem);
     margin-top: 1.25rem;
     bottom: 0;
     .footerTit,.footerMai,.footerFoo{
