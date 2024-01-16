@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-12-19 11:33:55
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-01-16 22:10:58
+ * @LastEditTime: 2024-01-16 22:25:50
  * @FilePath: \Vue-wallpapers site\src\views\Dynamic\components\main\dynamicPages.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -21,9 +21,8 @@
                    <img :src="item.img_url[0]" alt="">
                   </div>
                   <div class="main_text">
-                    <span>{{ item.img_introduce }}</span>
+                    <p>{{ item.img_introduce }}</p>
                     <p>{{ item.img_exegesis }}</p>
-                    <p></p>
                   </div>
               </div>
               <p>
@@ -121,7 +120,7 @@ onMounted(()=>{
     justify-content: space-between;
     #dynamicImg{
       background-color: $white;
-      @include wh(49.1%,6rem);
+      @include wh(49.1%,5.7rem);
       margin:.125rem .1rem .125rem;
       display: flex;
       box-shadow: 0 0.025rem 0.05rem rgba(0, 0, 0, 0.0784313725);
@@ -157,7 +156,7 @@ onMounted(()=>{
               font-family: '方正幼圆';  
         }
         .main_box{
-          @include wh(100%,3.5rem);
+          @include wh(100%,3.2rem);
           display: flex;
           padding: .25rem .25rem 0rem 0rem; 
           .main_img{
@@ -177,12 +176,17 @@ onMounted(()=>{
               padding-left: .375rem;
               line-height: .5rem;
             }
-            span{
-              @include fontsize($middleSize2,$black1);
+              p{
+              @include fontsize($verysmallSize,$graysColor4);
               font-family: '方正幼圆';
+              padding-left: .375rem;
+              line-height: .4rem;
             }
-            p{
-              @include fontsize($middleSize,$graysColor4);
+            p:nth-child(1){
+              @include fontsize($middleSize2,$black1);
+              line-height: .5rem;
+              padding-left: .4rem;
+              margin-top: .25rem
             }
           }
           
